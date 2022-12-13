@@ -122,7 +122,7 @@ VLIB_NODE_FN (sr_pt_node)
 	  to_next += 1;
 	  n_left_from -= 1;
 	  n_left_to_next -= 1;
-	  timestamp_64_t t64;
+	  timestamp_64_t t64 = {0};
 
 	  b0 = vlib_get_buffer (vm, bi0);
 	  iface = vnet_buffer (b0)->sw_if_index[VLIB_TX];
